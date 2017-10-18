@@ -1,0 +1,122 @@
+buildscript {
+	ext.kotlin_version = '1.1.51'
+
+	repositories {
+		mavenCentral()
+		maven {
+			name = 'markdown-doclet'
+			url = 'https://oss.sonatype.org/content/repositories/'
+		}
+		jcenter()
+		maven {
+			name = 'forge'
+			url = 'https://files.minecraftforge.net/maven'
+		}
+	}
+
+	dependencies {
+		classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+		classpath 'ch.raffael.markdown-doclet:markdown-doclet:1.4'
+
+//		classpath 'gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.14.0'
+	}
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'signing'
+//apply plugin: 'license'
+
+apply plugin: 'ch.raffael.markdown-doclet'
+
+version =  '0.0.1'
+group = 'me.hink.tweaker' // https://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "Tweaker" + "_" + '1.8.9'
+description = "Tweaker is a Minecraft Forge mod that provides tons of general enhancements, bug fixes, and core game " +
+	"tweak features."
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+minecraft {
+	version = '1.8.9-latest'
+	mappings = 'stable_22'
+	runDir = 'run'
+	useDepAts = false
+}
+
+//license {
+//	ext {
+//		description = 'A coremod to mod your game.'
+//		year = '2017'
+//		fullname = 'h1nk'
+//	}
+//	header rootProject.file('HEADER')
+//	include '**me/hink/gradle/**/*.java'
+//	excludes ([])
+//	ignoreFailures false
+//	strictCheck true
+//	mapping {
+//		java = 'SLASHSTAR_STYLE'
+//	}
+//}
+
+jar {
+	manifest {
+		attributes 'FMLCorePlugin': 'me.hink.tweaker.asm.TweakerPlugin'
+		attributes 'FMLCorePluginContainsMod': 'true'
+		attributes 'FMLCorePluginContainsFMLMod': 'true'
+		attributes 'FMLAT': 'tweaker_at.cfg'
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile 'junit:junit:4.12'
+	compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+}
+
+processResources {
+	inputs.property "version", project.version
+	inputs.property "mcversion", project.minecraft.version
+
+	from(sourceSets.main.resources.srcDirs) {
+		include 'mcmod.info'
+		expand 'version':project.version, 'mcversion':project.minecraft.version
+	}
+
+	from(sourceSets.main.resources.srcDirs) {
+		exclude 'mcmod.info'
+	}
+}
+
+compileJava {
+	options.warnings = true
+	options.deprecation = true
+	options.compilerArgs += ['-Xlint:unchecked']
+}
+
+compileKotlin {
+	kotlinOptions {
+		jvmTarget = sourceCompatibility
+	}
+}
+
+compileTestKotlin {
+	kotlinOptions {
+		jvmTarget = sourceCompatibility
+	}
+}
+
+task cleanConfigs(type: Delete) {
+	description 'Delete\'s Forge mod configruation for mod from run directory.'
+
+	delete minecraft.runDir + '/' + 'config' + '/' + 'tweaker.cfg'
+	followSymlinks = false
+}

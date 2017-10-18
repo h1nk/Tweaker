@@ -1,0 +1,69 @@
+/*
+ * Copyright (c) 2017 h1nk
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+package me.hink.tweaker.asm;
+
+import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+
+import java.util.Map;
+
+/**
+ * TODO
+ *
+ * @author <a href="https://github.com/h1nk">h1nk</a>
+ * @since 0.0.1
+ */
+@IFMLLoadingPlugin.MCVersion(value = "1.8.9")
+// FIXME: meta transformer exclusions mess up the event bus registry
+// @IFMLLoadingPlugin.TransformerExclusions({"me.hink.tweaker", "net.minecraftforge"})
+// @IFMLLoadingPlugin.TransformerExclusions(value = {"me.hink.tweaker"})
+@IFMLLoadingPlugin.Name(value = "tweaker")
+public class TweakerPlugin implements IFMLLoadingPlugin {
+	@Override
+	public String[] getASMTransformerClass() {
+		final String[] transformers = new String[]{
+			ClassTransformer.class.getName()
+		};
+
+		return transformers;
+	}
+
+	@Override
+	public String getModContainerClass() {
+//		Who's mans is this?
+//		return TweakerMod.class.getName();
+		return null;
+	}
+
+	@Override
+	public String getSetupClass() {
+		return null;
+	}
+
+	@Override
+	public void injectData(Map<String, Object> data) {}
+
+	@Override
+	public String getAccessTransformerClass() {
+		return null;
+	}
+}

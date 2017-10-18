@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "tweaker",
+    "name": "Tweaker",
+    "description": "Tons of tweaks and coremod functionality",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/h1nk/Tweaker",
+    "updateUrl": "",
+    "authorList": ["Hink"],
+    "credits": "Thank you to pokechu22 for tips with debugging",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

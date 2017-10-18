@@ -1,0 +1,37 @@
+root = true
+
+[*]
+end_of_line = crlf
+insert_final_newline = false
+charset = utf-8
+
+# JVM languages
+[*.{java,kt,groovy}]
+indent_style = tab
+indent_size = 4
+
+# Gradle DSL
+[*.gradle]
+charset = utf-8
+indent_size = 4
+indent_style = tab
+
+# Scripting Languages
+[*.{sh,bat,py}]
+indent_style = tab
+indent_size = 4
+
+# Plain Text & Markup
+[*.{txt,md,cfg}]
+indent_style = tab
+indent_size = 4
+
+# YAML/JSON
+[*.{yml,info}]
+indent_style = space
+indent_size = 2
+
+# XML, etc.
+[*.{xml,iml,cfg}]
+indent_style = tab
+indent_size = 4

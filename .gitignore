@@ -1,0 +1,56 @@
+# eclipse
+eclipse/
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# gradle wrapper scripts
+gradlew.*
+
+# gradle wrapper binaries
+gradle/
+
+# gradle project directory
+.gradle/
+
+# project build output
+build/
+classes/
+target/
+out/
+bin/
+
+# information
+changelogs/
+credits/
+licenses/
+logs/
+information/
+
+# scripts
+*.sh
+*.bat
+*.py
+
+# miscellaneous unit testing stuff
+src/test/
+
+# runtime environment
+run/
+*.hprof
+
+# images
+*.xcf
+
+# extra GitHub stuff in .github
+/.github/readme-images/
+
+README.md

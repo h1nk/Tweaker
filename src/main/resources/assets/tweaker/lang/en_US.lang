@@ -1,0 +1,19 @@
+# English (US)
+tweaker.config-gui.title=Tweaker Mod Configuration GUI
+
+tweaker.config-gui.category.screenshots=Screenshots
+
+tweaker.config-gui.category.screenshots.is-custom-screenshot-name-enabled=Enable Custom Screenshot Naming
+tweaker.config-gui.category.screenshots.custom-screenshot-name=Custom Screenshot File Name Pattern
+
+tweaker.config-gui.category.features=Features
+
+tweaker.config-gui.category.plugin-messaging=Plugin Channel Messaging
+
+tweaker.config-gui.category.bug-fixes=Bug Fixes
+
+< Fix >
+fml.menu.mods.search=Search:
+
+< API >
+tweaker.api.default-cancel-message=Screenshot cancelled
