@@ -100,9 +100,9 @@ The bug is caused by incorrect logic to reset the hand after the player enters a
 
 ### The Bug
 
-</div>
-
 The bug as introduced in an unknown Minecraft version:
+
+</div>
 
 ```Java
 public void renderRightArm(AbstractClientPlayer clientPlayer)
@@ -196,7 +196,7 @@ The following bug occurs when a player exits fullscreen mode. When exiting from 
 
 <div align="center">
 
-#### The Bug
+### The Bug
 
 </div>
 
@@ -270,7 +270,7 @@ public void toggleFullscreen()
 
 <div align="center">
 
-#### My Fix
+### My Fix
 
 </div>
 
@@ -347,10 +347,14 @@ public void toggleFullscreen()
 
 <div align="center">
 
-#### Video explanation of the bug:
+### Video explanation of the bug:
 
 [![](https://img.youtube.com/vi/ANfvuxkLV58/0.jpg)](https://youtu.be/ANfvuxkLV58)
 
 </div>
 
-Read more from [MC-68754](https://bugs.mojang.com/browse/MC-68754?focusedCommentId=347914&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-347914), [MC-111254](https://bugs.mojang.com/browse/MC-111254) and [LWJGL-142](https://github.com/LWJGL/lwjgl/issues/142).
+<div align="center">
+
+Read more from: [MC-68754](https://bugs.mojang.com/browse/MC-68754?focusedCommentId=347914&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-347914), [MC-111254](https://bugs.mojang.com/browse/MC-111254) & [LWJGL-142](https://github.com/LWJGL/lwjgl/issues/142)
+
+</div>
