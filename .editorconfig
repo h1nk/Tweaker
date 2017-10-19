@@ -6,7 +6,7 @@ insert_final_newline = false
 charset = utf-8
 
 # JVM languages
-[*.{java,kt,groovy}]
+[*.{java,kt,kts,groovy}]
 indent_style = tab
 indent_size = 4
 
