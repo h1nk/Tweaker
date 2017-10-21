@@ -54,6 +54,7 @@ import static me.hink.tweaker.config.TConfig.startConfig;
  * @since 0.0.1
  */
 @Mod(modid = MODID,
+	name = "Tweaker",
 	modLanguage = "java",
 	updateJSON = "https://h1nk.github.io/mods/tweaker/update.json",
 	version = "0.0.1",
