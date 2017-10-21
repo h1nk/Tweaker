@@ -234,7 +234,7 @@ public class ClassTransformer implements IClassTransformer {
 				insnList.add(new VarInsnNode(ALOAD, 2));
 
 				// MinecraftForge.EVENT_BUS.post(new ReadPacketEvent(p_channelRead0_2_))
-				insnList.add(new MethodInsnNode(INVOKESPECIAL, "me/hink/tweaker/event/events/ReadPacketEvent", "<init>", isObfuscated ? "(Lid;)V" : "(Lnet/minecraft/network/Packet;)V", false));
+				insnList.add(new MethodInsnNode(INVOKESPECIAL, "me/hink/tweaker/event/events/ReadPacketEvent", "<init>", isObfuscated ? "(Lff;)V" : "(Lnet/minecraft/network/Packet;)V", false));
 				insnList.add(new MethodInsnNode(INVOKEVIRTUAL, "net/minecraftforge/fml/common/eventhandler/EventBus", "post", "(Lnet/minecraftforge/fml/common/eventhandler/Event;)Z", false));
 
 				LabelNode label = new LabelNode();
