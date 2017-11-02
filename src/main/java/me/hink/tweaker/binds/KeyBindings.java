@@ -46,7 +46,7 @@ public class KeyBindings {
 		toggleDebugCamera = new KeyBinding("Toggle Debug Camera", Keyboard.KEY_NONE, "key.categories.misc");
 		muteSound = new KeyBinding("Toggle Mute Sound", Keyboard.KEY_NUMPADENTER, "key.categories.misc");
 
-		viewPanPerspective = new KeyBinding("View Perspective", Keyboard.KEY_LEFT, "");
+		viewPanPerspective = new KeyBinding("View Perspective", Keyboard.KEY_LMENU, "");
 
 		ClientRegistry.registerKeyBinding(viewPerspective3);
 		ClientRegistry.registerKeyBinding(toggleDebugCamera);
