@@ -29,6 +29,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundCategory;
 import net.minecraft.util.ChatComponentText;
 
+import me.hink.tweaker.config.TSettings;
 import me.hink.tweaker.util.ScreenShotUtils;
 
 import static me.hink.tweaker.binds.KeyBindings.*;
@@ -85,6 +86,20 @@ public class KeyInputHandler {
 		}
 		if (toggleDebugCamera.isPressed()) {
 			Minecraft.getMinecraft().gameSettings.debugCamEnable = !Minecraft.getMinecraft().gameSettings.debugCamEnable;
+		}
+		if (viewPanPerspective.isPressed()) {
+			Minecraft mc = Minecraft.getMinecraft();
+
+			TSettings.isPanPerspective = !TSettings.isPanPerspective;
+
+			TSettings.cameraYaw = mc.thePlayer.cameraYaw;
+			TSettings.cameraPitch = mc.thePlayer.cameraPitch;
+
+			if (TSettings.isPanPerspective) {
+				mc.gameSettings.thirdPersonView = 1;
+			} else {
+				mc.gameSettings.thirdPersonView = 0;
+			}
 		}
 	}
 }
