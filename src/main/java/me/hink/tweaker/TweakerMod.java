@@ -38,10 +38,7 @@ import me.hink.tweaker.binds.KeyBindings;
 import me.hink.tweaker.commands.CommandParsePlugins;
 import me.hink.tweaker.commands.CommandSavePlayerList;
 import me.hink.tweaker.config.SoundSettings;
-import me.hink.tweaker.event.forge.ClientEventHandler;
-import me.hink.tweaker.event.forge.KeyInputHandler;
-import me.hink.tweaker.event.forge.PacketEventHandler;
-import me.hink.tweaker.event.forge.ScreenShotEventHandler;
+import me.hink.tweaker.event.forge.*;
 
 import static me.hink.tweaker.TweakerMod.MODID;
 import static me.hink.tweaker.config.TConfig.startConfig;
