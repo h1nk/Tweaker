@@ -93,5 +93,6 @@ public class TweakerMod {
 
 		MinecraftForge.EVENT_BUS.register(new PacketEventHandler());
 		MinecraftForge.EVENT_BUS.register(new ScreenShotEventHandler());
+		MinecraftForge.EVENT_BUS.register(new RenderEventHandler());
 	}
 }
