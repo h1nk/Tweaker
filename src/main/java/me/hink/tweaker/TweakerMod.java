@@ -58,6 +58,7 @@ import static me.hink.tweaker.config.TConfig.startConfig;
 	modLanguage = "java",
 	updateJSON = "https://h1nk.github.io/mods/tweaker/update.json",
 	version = "0.0.1",
+	useMetadata = true,
 	guiFactory = "me.hink.tweaker.gui.TModGuiFactory",
 	clientSideOnly = true)
 public class TweakerMod {
