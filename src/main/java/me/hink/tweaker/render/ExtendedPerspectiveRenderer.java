@@ -352,29 +352,9 @@ public class ExtendedPerspectiveRenderer extends EntityRenderer {
 				{
 					CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Rendering screen");
 					CrashReportCategory crashreportcategory = crashreport.makeCategory("Screen render details");
-					crashreportcategory.addCrashSectionCallable("Screen name", new Callable<String>()
-					{
-						public String call() throws Exception
-						{
-//							return EntityRenderer.this.mc.currentScreen.getClass().getCanonicalName();
-							return Minecraft.getMinecraft().currentScreen.getClass().getCanonicalName();
-						}
-					});
-					crashreportcategory.addCrashSectionCallable("Mouse location", new Callable<String>()
-					{
-						public String call() throws Exception
-						{
-							return String.format("Scaled: (%d, %d). Absolute: (%d, %d)", new Object[] {Integer.valueOf(k1), Integer.valueOf(l1), Integer.valueOf(Mouse.getX()), Integer.valueOf(Mouse.getY())});
-						}
-					});
-					crashreportcategory.addCrashSectionCallable("Screen size", new Callable<String>()
-					{
-						public String call() throws Exception
-						{
-//							return String.format("Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %d", new Object[] {Integer.valueOf(scaledresolution.getScaledWidth()), Integer.valueOf(scaledresolution.getScaledHeight()), Integer.valueOf(EntityRenderer.this.mc.displayWidth), Integer.valueOf(EntityRenderer.this.mc.displayHeight), Integer.valueOf(scaledresolution.getScaleFactor())});
-							return String.format("Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %d", new Object[] {Integer.valueOf(scaledresolution.getScaledWidth()), Integer.valueOf(scaledresolution.getScaledHeight()), Integer.valueOf(Minecraft.getMinecraft().displayWidth), Integer.valueOf(Minecraft.getMinecraft().displayHeight), Integer.valueOf(scaledresolution.getScaleFactor())});
-						}
-					});
+					crashreportcategory.addCrashSectionCallable("Screen name", () -> Minecraft.getMinecraft().currentScreen.getClass().getCanonicalName());
+					crashreportcategory.addCrashSectionCallable("Mouse location", () -> String.format("Scaled: (%d, %d). Absolute: (%d, %d)", k1, l1, Mouse.getX(), Mouse.getY()));
+					crashreportcategory.addCrashSectionCallable("Screen size", () -> String.format("Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %d", scaledresolution.getScaledWidth(), scaledresolution.getScaledHeight(), Minecraft.getMinecraft().displayWidth, Minecraft.getMinecraft().displayHeight, scaledresolution.getScaleFactor()));
 					throw new ReportedException(crashreport);
 				}
 			}
