@@ -29,10 +29,10 @@ import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 /**
- * TODO
+ * A helper class for all the keybinds this mod registers.
  *
- * @author <a href="https://github.com/h1nk">h1nk</a>
- * @since 0.0.1
+ * @author	<a href="https://github.com/h1nk">h1nk</a>
+ * @since	0.0.1
  */
 public class KeyBindings {
 	public static KeyBinding viewPerspective3;
