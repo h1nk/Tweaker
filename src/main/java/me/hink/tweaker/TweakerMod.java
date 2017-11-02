@@ -49,9 +49,9 @@ import static me.hink.tweaker.config.TConfig.startConfig;
 /**
  * This is the base Forge mod class for FML to call
  *
- * @see net.minecraftforge.fml.common.Mod
- * @author <a href="https://github.com/h1nk">h1nk</a>
- * @since 0.0.1
+ * @see		net.minecraftforge.fml.common.Mod
+ * @author	<a href="https://github.com/h1nk">h1nk</a>
+ * @since	0.0.1
  */
 @Mod(modid = MODID,
 	name = "Tweaker",
