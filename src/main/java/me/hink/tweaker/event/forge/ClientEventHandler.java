@@ -38,7 +38,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ITickableSound;
 import net.minecraft.client.gui.*;
 import net.minecraft.client.gui.inventory.GuiInventory;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.StringUtils;
 
 import me.hink.tweaker.TweakerMod;
@@ -92,11 +91,8 @@ public class ClientEventHandler {
 		if (TConfig.isDebugBlockHighlightingEnabled) {
 			event.setCanceled(true);
 
-			RenderUtils.drawCustomSelectionBox(event);
-
-			EntityPlayer player = event.player;
-
-			RenderUtils.drawDebugSelectionBox(event);
+			RenderUtils.drawCorrectedSelectionBox(event);
+			RenderUtils.drawIncorrectSelectionBox(event);
 		}
 	}
 
