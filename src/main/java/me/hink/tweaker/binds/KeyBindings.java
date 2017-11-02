@@ -39,13 +39,19 @@ public class KeyBindings {
 	public static KeyBinding toggleDebugCamera;
 	public static KeyBinding muteSound;
 
+	public static KeyBinding viewPanPerspective;
+
 	public static void register() {
 		viewPerspective3 = new KeyBinding("View Perspective 3", Keyboard.KEY_F6, "key.categories.misc");
 		toggleDebugCamera = new KeyBinding("Toggle Debug Camera", Keyboard.KEY_NONE, "key.categories.misc");
 		muteSound = new KeyBinding("Toggle Mute Sound", Keyboard.KEY_NUMPADENTER, "key.categories.misc");
 
+		viewPanPerspective = new KeyBinding("View Perspective", Keyboard.KEY_LEFT, "");
+
 		ClientRegistry.registerKeyBinding(viewPerspective3);
 		ClientRegistry.registerKeyBinding(toggleDebugCamera);
 		ClientRegistry.registerKeyBinding(muteSound);
+
+		ClientRegistry.registerKeyBinding(viewPanPerspective);
 	}
 }
