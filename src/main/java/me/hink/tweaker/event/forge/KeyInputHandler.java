@@ -92,7 +92,7 @@ public class KeyInputHandler {
 
 			TSettings.isPanPerspective = !TSettings.isPanPerspective;
 
-			TSettings.cameraYaw = mc.thePlayer.cameraYaw;
+			TSettings.cameraYaw = mc.thePlayer.rotationYaw;
 			TSettings.cameraPitch = mc.thePlayer.cameraPitch;
 
 			if (TSettings.isPanPerspective) {
