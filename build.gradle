@@ -72,5 +72,5 @@ task cleanConfigs(type: Delete) {
 	description 'Delete\'s Forge mod configruation for mod from run directory.'
 
 	delete minecraft.runDir + '/' + 'config' + '/' + 'tweaker.cfg'
-	followSymlinks = false
+//	followSymlinks = false
 }
