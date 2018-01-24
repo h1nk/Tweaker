@@ -13,3 +13,4 @@ jdk:
 matrix:
   allow_failures:
     - jdk: openjdk9
+    - jdk: oraclejdk9
